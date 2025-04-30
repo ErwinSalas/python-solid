@@ -8,7 +8,7 @@ class TaskService:
         task = Task(description, type, priority)
         self.tasks.append(task)
 
-
+#Aplicando solid
 class NotificationService():
     def notify(self):
         pass
