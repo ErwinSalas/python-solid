@@ -1,13 +1,18 @@
-from services.task_service import TaskService
+import services.task_service as task_service
 
 def main():
-    task_service = TaskService()
-    task_service.create_task("Enviar correo a cliente", "Email", "alta")
-    task_service.create_task("Actualizar documento", "Doc", "media")
-    task_service.create_task("Reunión con equipo", "Meeting", "baja")
+    task_service_instance = task_service.TaskService()
+    task_creator = task_service.TaskCreator(task_service_instance)
+    task_notifier = task_service.HighPriorityNotifier(task_service_instance)
+    task_pdf_exporter = task_service.ExportToPDF(task_service_instance)
 
-    task_service.notify_users()
-    task_service.export_tasks("pdf")
+    task_creator.create_task("Tarea 1", "Alta")
+    task_creator.create_task("Tarea 2", "Media")
+    task_creator.create_task("Tarea 3", "Baja")
+
+    task_notifier.notify()
+
+    task_pdf_exporter.export()
 
 if __name__ == "__main__":
     main()
