@@ -10,8 +10,9 @@ from services.notifiers.sms_notifier import SMSNotifier
 
 def main():
     creator = TaskCreator()
-    notifier = TaskNotifier(urgent_notifier=EmailNotifier(), regular_notifier=SMSNotifier())
-    exporter = TaskExporter({"pdf": PdfExporter(), "csv": CsvExporter()})
+    notifier = TaskNotifier([EmailNotifier(), SMSNotifier()])
+    exporter = TaskExporter([PdfExporter(), CsvExporter()])
+
 
     service = TaskService(creator, notifier, exporter)
 
