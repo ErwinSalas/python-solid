@@ -8,17 +8,31 @@ class TaskService:
         task = Task(description, type, priority)
         self.tasks.append(task)
 
-    def notify_users(self):
-        for task in self.tasks:
-            if task.priority == "alta":
-                print(f"[EMAIL] Notificando tarea urgente: {task.description}")
-            else:
-                print(f"[SMS] Notificando tarea: {task.description}")
+#Aplicando solid
+class NotificationService():
+    def notify(self):
+        pass
+        
+                
+class EmailNotificationService(NotificationService):
+    def notify(self):
+        print("Notificando por correo")
 
-    def export_tasks(self, format):
-        if format == "pdf":
-            print("Exportando tareas a PDF...")
-        elif format == "csv":
-            print("Exportando tareas a CSV...")
-        else:
-            print("Formato de exportación no soportado")
+class SMSNotificationService(NotificationService):
+    def notify(self):
+        print(f"Notificando por SMS")
+
+
+class exportService():
+    def export(self):
+        pass
+
+class exportPDFService(exportService):
+    def export(self):
+        print("Exportando PDF")
+        pass
+    
+class exportCSVService(exportService):
+    def export(self):
+        print("Exportando CSV")
+        pass
