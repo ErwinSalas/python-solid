@@ -1,7 +1,7 @@
 from models.task import Task
 
 class TaskService:
-    def _init_(self):
+    def __init__(self):
         self.tasks = []
 
     def create_task(self, description, type, priority):

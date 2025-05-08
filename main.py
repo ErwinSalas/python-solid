@@ -15,5 +15,5 @@ def main():
     export_pdf_service.export()
     export_csv_service.export()
 
-if __name__ == "_main_":
-    main()
+
+main()
