@@ -36,4 +36,5 @@ class ComprarLaptop(Compra):
     def realizar_compra(self, carrito: CarritoDeCompras):
         carrito.agregar(self.laptop)
 
+#Cambios para hacer otro pull request jaja
 
