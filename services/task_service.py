@@ -1,24 +1,20 @@
 from models.task import Task
 
 class TaskService:
-    def __init__(self):
+    def __init__(self, notification_service, export_service):
         self.tasks = []
+        self.notification_service = notification_service
+        self.export_service = export_service
 
     def create_task(self, description, type, priority):
         task = Task(description, type, priority)
         self.tasks.append(task)
 
+    def get_tasks(self):
+        return self.tasks
+
     def notify_users(self):
-        for task in self.tasks:
-            if task.priority == "alta":
-                print(f"[EMAIL] Notificando tarea urgente: {task.description}")
-            else:
-                print(f"[SMS] Notificando tarea: {task.description}")
+        self.notification_service.notify_users(self.tasks)
 
     def export_tasks(self, format):
-        if format == "pdf":
-            print("Exportando tareas a PDF...")
-        elif format == "csv":
-            print("Exportando tareas a CSV...")
-        else:
-            print("Formato de exportación no soportado")
+        self.export_service.export_tasks(self.tasks)

@@ -1,0 +1,25 @@
+# Justificación 
+
+SRP --> Realicé clases diferentes para cada Servicio en archivos diferentes (Notificar y Exportar), 
+esto hace que cada clase tenga una única responsabilidad y que sea más fácil para darle mantenimiento.
+    La clase TaskNotifier ahora es responsable solo de la lógica de notificación
+    La clase ExportService ahora se encarga solo de exportar las tareas a diferentes formatos (PDF, CSV).
+
+
+OCP --> Ahora se pueden agregar nuevos formatos de exportación simplemente creando una nueva clase que 
+implemente la interfaz ExportStrategy, sin modificar el código de las clases existentes.
+
+
+LSP --> Las clases PdfExport y CsvExport implementan la interfaz ExportStrategy de manera que pueden ser 
+intercambiadas entre sí sin afectar el comportamiento del sistema.
+
+
+ISP --> La interfaz ExportStrategy está específicamente diseñada para el propósito de 
+exportación de tareas esto a cambio de tener una interfaz que obligue a las clases a implementar métodos que 
+no necesitan.
+
+
+DIP --> Ahora la clase TaskService depende de las abstracciones TaskNotifier y ExportService, 
+en lugar de implementar directamente la lógica de notificación o exportación, gracias a esto se puede cambiar 
+la implementación de notificación o exportación sin modificar la clase TaskService.
+
