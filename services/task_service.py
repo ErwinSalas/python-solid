@@ -10,11 +10,11 @@ class TaskService:
         task = Task(description, type, priority)
         self.tasks.append(task)
 
-    def get_tasks(self):
-        return self.tasks
+    # def get_tasks(self):
+    #     return self.tasks
 
-    def notify_users(self):
-        self.notification_service.notify_users(self.tasks)
+    # def notify_users(self):
+    #     self.notification_service.notify_users(self.tasks)
 
-    def export_tasks(self, format):
-        self.export_service.export_tasks(self.tasks)
+    # def export_tasks(self, format):
+    #     self.export_service.export_tasks(self.tasks)
