@@ -7,6 +7,7 @@
 """
 
 
+# Parte 1: Diseño inicial con incumplimiento de LSP
 """
     En este ejemplo, la clase PagoManual hereda de RealizarPago, pero no cumple
     con el principio de sustitución de Liskov (LSP) porque no puede procesar
