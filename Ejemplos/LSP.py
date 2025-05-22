@@ -1,4 +1,3 @@
-# Parte 1: Diseño inicial con incumplimiento de LSP
 """
     El Primcipio de sustitución de Liskov (LSP) establece que los objetos de una clase
     base deben poder ser reemplazados por objetos de una clase derivada sin alterar
