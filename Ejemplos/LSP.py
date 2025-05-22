@@ -4,7 +4,10 @@
     el correcto funcionamiento del programa. En otras palabras, si una clase A es
     una subclase de B, entonces deberíamos poder usar objetos de A en lugar de
     objetos de B sin problemas.
+"""
 
+
+"""
     En este ejemplo, la clase PagoManual hereda de RealizarPago, pero no cumple
     con el principio de sustitución de Liskov (LSP) porque no puede procesar
     pagos automáticamente. Esto significa que no se puede sustituir un objeto

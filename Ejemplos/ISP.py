@@ -7,15 +7,15 @@
     promueve la creación de interfaces más específicas y enfocadas, en lugar de
     interfaces grandes y generales que pueden contener métodos innecesarios para
     algunas clases.
-
-    Este diseño es incorrecto porque la clase Animal obliga a todas las subclases a
-    implementar métodos que no son relevantes para todos los tipos de animales. Por ejemplo,
-    un pez no necesita implementar el método volar().
 """
 
 
 # Parte 1: Diseño inicial con incumplimiento de ISP
-
+"""
+    Este diseño es incorrecto porque la clase Animal obliga a todas las subclases a
+    implementar métodos que no son relevantes para todos los tipos de animales. Por ejemplo,
+    un pez no necesita implementar el método volar().
+"""
 class Animal:
     def caminar(self):
         raise NotImplementedError("Este método debe ser implementado por la subclase")
